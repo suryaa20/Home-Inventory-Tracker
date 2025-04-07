@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Home Inventory Tracker</title>
+    <link rel="stylesheet" href="chat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-robot"></i> Home Inventory AI Assistant</h1>
+            <p>Track, manage, and get insights about your home inventory</p>
+        </header>
+
+        <div class="main-content">
+            <div class="inventory-section">
+                <h2>Your Inventory</h2>
+                <div class="inventory-actions">
+                    <button id="add-item-btn"><i class="fas fa-plus"></i> Add Item</button>
+                    <button id="scan-barcode-btn"><i class="fas fa-barcode"></i> Scan Barcode</button>
+                    <input type="text" id="search-inventory" placeholder="Search inventory...">
+                </div>
+                <div class="inventory-list" id="inventory-list">
+                    <!-- Inventory items will be loaded here -->
+                </div>
+            </div>
+
+            <div class="chat-section">
+                <h2>AI Assistant</h2>
+                <div class="chat-container" id="chat-container">
+                    <div class="chat-message bot-message">
+                        <div class="avatar"><i class="fas fa-robot"></i></div>
+                        <div class="message-content">
+                            <p>Hello! I'm your Home Inventory Assistant. How can I help you today? You can ask things like:</p>
+                            <ul>
+                                <li>"What items need to be restocked?"</li>
+                                <li>"Add milk to my inventory"</li>
+                                <li>"Where did I store my passport?"</li>
+                                <li>"Show me all electronics"</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="user-input" placeholder="Ask me about your inventory...">
+                    <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+                    <button id="voice-btn"><i class="fas fa-microphone"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add Item Modal -->
+        <div id="item-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2>Add New Item</h2>
+                <form id="item-form">
+                    <div class="form-group">
+                        <label for="item-name">Item Name*</label>
+                        <input type="text" id="item-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="item-category">Category</label>
+                        <select id="item-category">
+                            <option value="food">Food</option>
+                            <option value="electronics">Electronics</option>
+                            <option value="clothing">Clothing</option>
+                            <option value="documents">Documents</option>
+                            <option value="tools">Tools</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="item-quantity">Quantity</label>
+                        <input type="number" id="item-quantity" min="1" value="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="item-location">Location</label>
+                        <input type="text" id="item-location" placeholder="e.g., Kitchen cabinet">
+                    </div>
+                    <div class="form-group">
+                        <label for="item-expiry">Expiry Date (if applicable)</label>
+                        <input type="date" id="item-expiry">
+                    </div>
+                    <div class="form-group">
+                        <label for="item-notes">Notes</label>
+                        <textarea id="item-notes" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Add Item</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="contributor-credits">
+        <p>Chatbot developed by: 
+            <span class="contributor" data-id="12307660">Developer 1</span>,
+            <span class="contributor" data-id="12307667">Developer 2</span>,
+            <span class="contributor" data-id="12309725">Developer 3</span>
+        </p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
